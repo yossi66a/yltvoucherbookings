@@ -1,0 +1,150 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding: 20px;
+        }
+        .email-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #333333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: #333333;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <h2>Order Form</h2>
+        <p>Please fill in the details below to place your order.</p>
+
+        <!-- Form for order -->
+        <form action="mailto:vouchers@yltrust.com?subject=New%20Order%20Request" method="post" enctype="text/plain">
+            <!-- Customer Name -->
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Product Selection -->
+            <div class="form-group">
+                <label for="voucher1">£0.50 - 100 Vouchers (Book)</label>
+                <input type="number" id="voucher1" name="voucher1" min="0" value="0" oninput="calculateTotal()" />
+            </div>
+            <div class="form-group">
+                <label for="voucher2">£1.00 - 100 Vouchers (Book)</label>
+                <input type="number" id="voucher2" name="voucher2" min="0" value="0" oninput="calculateTotal()" />
+            </div>
+            <div class="form-group">
+                <label for="voucher3">£2.00 - 100 Vouchers (Book)</label>
+                <input type="number" id="voucher3" name="voucher3" min="0" value="0" oninput="calculateTotal()" />
+            </div>
+            <div class="form-group">
+                <label for="voucher4">£3.00 - 100 Vouchers (Book)</label>
+                <input type="number" id="voucher4" name="voucher4" min="0" value="0" oninput="calculateTotal()" />
+            </div>
+            <div class="form-group">
+                <label for="voucher5">£5.00 - 100 Vouchers (Book)</label>
+                <input type="number" id="voucher5" name="voucher5" min="0" value="0" oninput="calculateTotal()" />
+            </div>
+            <div class="form-group">
+                <label for="voucher6">£10.00 - 100 Vouchers (Book)</label>
+                <input type="number" id="voucher6" name="voucher6" min="0" value="0" oninput="calculateTotal()" />
+            </div>
+            <div class="form-group">
+                <label for="voucher7">£18.00 - 100 Vouchers (Book)</label>
+                <input type="number" id="voucher7" name="voucher7" min="0" value="0" oninput="calculateTotal()" />
+            </div>
+            <div class="form-group">
+                <label for="voucher8">£25.00 - 100 Vouchers (Book)</label>
+                <input type="number" id="voucher8" name="voucher8" min="0" value="0" oninput="calculateTotal()" />
+            </div>
+            <div class="form-group">
+                <label for="voucher9">£36.00 - 50 Vouchers (Book)</label>
+                <input type="number" id="voucher9" name="voucher9" min="0" value="0" oninput="calculateTotal()" />
+            </div>
+            <div class="form-group">
+                <label for="voucher10">£50.00 - 50 Vouchers (Book)</label>
+                <input type="number" id="voucher10" name="voucher10" min="0" value="0" oninput="calculateTotal()" />
+            </div>
+            <div class="form-group">
+                <label for="voucher11">£72.00 - 25 Vouchers (Book)</label>
+                <input type="number" id="voucher11" name="voucher11" min="0" value="0" oninput="calculateTotal()" />
+            </div>
+            <div class="form-group">
+                <label for="voucher12">£100.00 - 25 Vouchers (Book)</label>
+                <input type="number" id="voucher12" name="voucher12" min="0" value="0" oninput="calculateTotal()" />
+            </div>
+
+            <div class="total-section">
+                <p>Total: £<span id="totalAmount">0.00</span></p>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Submit Order</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        const calculateTotal = () => {
+            const voucher1 = document.getElementById('voucher1').value * 0.50 * 100;
+            const voucher2 = document.getElementById('voucher2').value * 1.00 * 100;
+            const voucher3 = document.getElementById('voucher3').value * 2.00 * 100;
+            const voucher4 = document.getElementById('voucher4').value * 3.00 * 100;
+            const voucher5 = document.getElementById('voucher5').value * 5.00 * 100;
+            const voucher6 = document.getElementById('voucher6').value * 10.00 * 100;
+            const voucher7 = document.getElementById('voucher7').value * 18.00 * 100;
+            const voucher8 = document.getElementById('voucher8').value * 25.00 * 100;
+            const voucher9 = document.getElementById('voucher9').value * 36.00 * 50;
+            const voucher10 = document.getElementById('voucher10').value * 50.00 * 50;
+            const voucher11 = document.getElementById('voucher11').value * 72.00 * 25;
+            const voucher12 = document.getElementById('voucher12').value * 100.00 * 25;
+
+            const totalAmount = voucher1 + voucher2 + voucher3 + voucher4 + voucher5 + voucher6 + voucher7 + voucher8 + voucher9 + voucher10 + voucher11 + voucher12;
+            document.getElementById('totalAmount').innerText = totalAmount.toFixed(2);
+        }
+    </script>
+</body>
+</html>
