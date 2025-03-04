@@ -1,149 +1,124 @@
-<<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Form</title>
+    <title>Yesamach Levav Trust – Voucher Book Order Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
+            margin: 20px;
             padding: 20px;
-        }
-        .email-container {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        h2 {
-            color: #333333;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            font-weight: bold;
-            color: #333333;
-        }
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #f9f9f9;
         }
-        .submit-btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
         }
-        .submit-btn:hover {
-            background-color: #45a049;
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        .checkbox {
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="email-container">
-        <h2>Order Form</h2>
-        <p>Please fill in the details below to place your order.</p>
-
-        <!-- Form for order -->
-        <form action="mailto:vouchers@yltrust.com?subject=New%20Order%20Request" method="post" enctype="text/plain">
-            <!-- Customer Name -->
-            <div class="form-group">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-
-            <!-- Email Address -->
-            <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <!-- Product Selection -->
-            <div class="form-group">
-                <label for="voucher1">£0.50 - 100 Vouchers (Book)</label>
-                <input type="number" id="voucher1" name="voucher1" min="0" value="0" oninput="calculateTotal()" />
-            </div>
-            <div class="form-group">
-                <label for="voucher2">£1.00 - 100 Vouchers (Book)</label>
-                <input type="number" id="voucher2" name="voucher2" min="0" value="0" oninput="calculateTotal()" />
-            </div>
-            <div class="form-group">
-                <label for="voucher3">£2.00 - 100 Vouchers (Book)</label>
-                <input type="number" id="voucher3" name="voucher3" min="0" value="0" oninput="calculateTotal()" />
-            </div>
-            <div class="form-group">
-                <label for="voucher4">£3.00 - 100 Vouchers (Book)</label>
-                <input type="number" id="voucher4" name="voucher4" min="0" value="0" oninput="calculateTotal()" />
-            </div>
-            <div class="form-group">
-                <label for="voucher5">£5.00 - 100 Vouchers (Book)</label>
-                <input type="number" id="voucher5" name="voucher5" min="0" value="0" oninput="calculateTotal()" />
-            </div>
-            <div class="form-group">
-                <label for="voucher6">£10.00 - 100 Vouchers (Book)</label>
-                <input type="number" id="voucher6" name="voucher6" min="0" value="0" oninput="calculateTotal()" />
-            </div>
-            <div class="form-group">
-                <label for="voucher7">£18.00 - 100 Vouchers (Book)</label>
-                <input type="number" id="voucher7" name="voucher7" min="0" value="0" oninput="calculateTotal()" />
-            </div>
-            <div class="form-group">
-                <label for="voucher8">£25.00 - 100 Vouchers (Book)</label>
-                <input type="number" id="voucher8" name="voucher8" min="0" value="0" oninput="calculateTotal()" />
-            </div>
-            <div class="form-group">
-                <label for="voucher9">£36.00 - 50 Vouchers (Book)</label>
-                <input type="number" id="voucher9" name="voucher9" min="0" value="0" oninput="calculateTotal()" />
-            </div>
-            <div class="form-group">
-                <label for="voucher10">£50.00 - 50 Vouchers (Book)</label>
-                <input type="number" id="voucher10" name="voucher10" min="0" value="0" oninput="calculateTotal()" />
-            </div>
-            <div class="form-group">
-                <label for="voucher11">£72.00 - 25 Vouchers (Book)</label>
-                <input type="number" id="voucher11" name="voucher11" min="0" value="0" oninput="calculateTotal()" />
-            </div>
-            <div class="form-group">
-                <label for="voucher12">£100.00 - 25 Vouchers (Book)</label>
-                <input type="number" id="voucher12" name="voucher12" min="0" value="0" oninput="calculateTotal()" />
-            </div>
-
-            <div class="total-section">
-                <p>Total: £<span id="totalAmount">0.00</span></p>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="form-group">
-                <button type="submit" class="submit-btn">Submit Order</button>
-            </div>
-        </form>
+    <div class="header">
+        <img src="/mnt/data/image008.png" alt="YLT Logo" class="logo">
+        <h2>Yesamach Levav Trust – Voucher Book Order Form</h2>
+        <p>Charity Number: 1127977</p>
     </div>
-    <script>
-        const calculateTotal = () => {
-            const voucher1 = document.getElementById('voucher1').value * 0.50 * 100;
-            const voucher2 = document.getElementById('voucher2').value * 1.00 * 100;
-            const voucher3 = document.getElementById('voucher3').value * 2.00 * 100;
-            const voucher4 = document.getElementById('voucher4').value * 3.00 * 100;
-            const voucher5 = document.getElementById('voucher5').value * 5.00 * 100;
-            const voucher6 = document.getElementById('voucher6').value * 10.00 * 100;
-            const voucher7 = document.getElementById('voucher7').value * 18.00 * 100;
-            const voucher8 = document.getElementById('voucher8').value * 25.00 * 100;
-            const voucher9 = document.getElementById('voucher9').value * 36.00 * 50;
-            const voucher10 = document.getElementById('voucher10').value * 50.00 * 50;
-            const voucher11 = document.getElementById('voucher11').value * 72.00 * 25;
-            const voucher12 = document.getElementById('voucher12').value * 100.00 * 25;
+    <form action="mailto:vouchers@yltrust.com" method="post" enctype="text/plain">
+        <label>Donor Name: <input type="text" name="donor_name"></label><br>
+        <label>Contact Number: <input type="text" name="contact_number"></label><br>
+        <label>Email Address: <input type="email" name="email"></label><br><br>
 
-            const totalAmount = voucher1 + voucher2 + voucher3 + voucher4 + voucher5 + voucher6 + voucher7 + voucher8 + voucher9 + voucher10 + voucher11 + voucher12;
-            document.getElementById('totalAmount').innerText = totalAmount.toFixed(2);
+        <table>
+            <tr>
+                <th>Select</th>
+                <th>Voucher Book</th>
+                <th>No. of Vouchers</th>
+                <th>Price per Book</th>
+                <th>Quantity</th>
+                <th>Total (£)</th>
+            </tr>
+            <script>
+                const voucherBooks = [
+                    { value: 0.50, vouchers: 100, price: 50.00 },
+                    { value: 1.00, vouchers: 100, price: 100.00 },
+                    { value: 2.00, vouchers: 100, price: 200.00 },
+                    { value: 3.00, vouchers: 100, price: 300.00 },
+                    { value: 5.00, vouchers: 100, price: 500.00 },
+                    { value: 10.00, vouchers: 100, price: 1000.00 },
+                    { value: 18.00, vouchers: 100, price: 1800.00 },
+                    { value: 25.00, vouchers: 100, price: 2500.00 },
+                    { value: 36.00, vouchers: 50, price: 1800.00 },
+                    { value: 50.00, vouchers: 50, price: 2500.00 },
+                    { value: 72.00, vouchers: 25, price: 1800.00 },
+                    { value: 100.00, vouchers: 25, price: 2500.00 }
+                ];
+                
+                document.write(voucherBooks.map(book => `
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" name="voucher_${book.value}" onchange="calculateTotal()"></td>
+                        <td>£${book.value.toFixed(2)}</td>
+                        <td>${book.vouchers}</td>
+                        <td>£${book.price.toFixed(2)}</td>
+                        <td><input type="number" name="quantity_${book.value}" min="0" value="0" oninput="calculateTotal()"></td>
+                        <td class="total_price">£0.00</td>
+                    </tr>
+                `).join(''));
+            </script>
+        </table>
+        <br>
+        <label>Total Amount: £<span id="grand_total">0.00</span></label><br><br>
+        
+        <label>Payment Method:</label>
+        <input type="radio" name="payment" value="Bank Transfer"> Bank Transfer
+        <input type="radio" name="payment" value="Cheque"> Cheque<br><br>
+        
+        <label>Bank Transfer Details: (Account details of Yesamach Levav Trust can be provided here)</label><br><br>
+        
+        <label>Signature: <input type="text" name="signature"></label><br>
+        <label>Date: <input type="date" name="date"></label><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function calculateTotal() {
+            let grandTotal = 0;
+            const rows = document.querySelectorAll("table tr");
+            rows.forEach((row, index) => {
+                if (index === 0) return;
+                const checkbox = row.querySelector("input[type='checkbox']");
+                const quantityInput = row.querySelector("input[type='number']");
+                const pricePerBook = parseFloat(row.cells[3].textContent.replace('£', ''));
+                const totalCell = row.cells[5];
+                if (checkbox.checked) {
+                    const quantity = parseInt(quantityInput.value) || 0;
+                    const total = pricePerBook * quantity;
+                    totalCell.textContent = `£${total.toFixed(2)}`;
+                    grandTotal += total;
+                } else {
+                    totalCell.textContent = "£0.00";
+                }
+            });
+            document.getElementById("grand_total").textContent = grandTotal.toFixed(2);
         }
     </script>
 </body>
